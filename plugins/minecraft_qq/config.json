@@ -1,0 +1,71 @@
+{
+    "Join": {
+      "Message": "%Player%加入了服务器",
+      "sendQQ": true
+    },
+    "Quit": {
+      "Message": "%Player%退出了服务器",
+      "sendQQ": true
+    },
+    "ChangeServer": {
+      "Message": "%Player%加入了子服%Server%",
+      "sendQQ": true
+    },
+    "ServerSet": {
+      "ServerName": "skimit_cd",
+      "Check": "-",
+      "Message": "%Server%-%Player%:%Message%",
+      "Say": "[群]%Player%:%Message%",
+      "Mode": 1,
+      "SendOneByOne": true,
+      "SendOneByOneMessage": "[%Server%-%PlayerNumber%]-%PlayerList%",
+      "HideEmptyServer": true,
+      "PlayerListMessage": "当前在线人数：%PlayerNumber%\n玩家列表：%PlayerList%",
+      "ServerOnlineMessage": "%ServerName%服务器在线",
+      "BungeeCord": false,
+      "CommandDelay": 2000
+    },
+    "Servers": {
+      "survival": "生存服",
+      "mirror": "镜像服",
+      "test": "测试服"
+    },
+    "SendAllServer": {
+      "Enable": true,
+      "Message": "[%ServerName%-%Server%]玩家：[%Player%]发送群消息：[%Message%]",
+      "OnlySideServer": true
+    },
+    "System": {
+      "IP": "127.0.0.1",
+      "Port": 46515,
+      "AutoConnect": true,
+      "AutoConnectTime": 10000,
+      "Debug": false,
+      "Head": "[Head]",
+      "End": "[End]",
+      "Sleep": 50
+    },
+    "User": {
+      "SendSucceed": false,
+      "NotSendCommand": true
+    },
+    "Logs": {
+      "Group": true,
+      "Server": true
+    },
+    "Placeholder": {
+      "Message": "%Message%",
+      "Player": "%Player%",
+      "Servername": "%ServerName%",
+      "Server": "%Server%",
+      "PlayerNumber": "%PlayerNumber%",
+      "PlayerList": "%PlayerList%"
+    },
+    "Language": {
+      "MessageOFF": "§2你已不会在收到群消息",
+      "MessageON": "§2你开始接受群消息",
+      "SucceedMessage": "§2已发送消息至群内"
+    },
+    "Mute": [],
+    "Version": "${version}"
+  }

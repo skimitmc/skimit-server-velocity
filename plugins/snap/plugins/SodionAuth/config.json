@@ -1,0 +1,177 @@
+{
+  "version": 2,
+  "_default lang": "The default language should message use.",
+  "default lang": "zh_CN",
+  "_server id": "The server's ID",
+  "server id": "fb9a99828c8445c19d614bcea4e4ccf4",
+  "database": {
+    "_type": "The database type should SodionAuth use.",
+    "type": "h2",
+    "_table prefix": "The table prefix should SodionAuth use.",
+    "table prefix": "sa_",
+    "_password hash_0": "The password hash should SodionAuth use as default.",
+    "_password hash_1": "If a player with other kind of hash, It will transfer into this when he login in.",
+    "_password hash_2": "If It sets to empty string, sodionAuth will use Api only.",
+    "password hash": "BCrypt",
+    "_salt length": "The password salt length",
+    "salt length": 6,
+    "h2": {
+      "_url_0": "The url to h2 database",
+      "_url_1": "Default is file path",
+      "_url_2": "Tcp likes tcp://localhost/~/test",
+      "url": "./plugins/SodionAuth/Users",
+      "_username": "The username for h2.",
+      "username": "root",
+      "_password": "The password for h2.",
+      "password": ""
+    },
+    "sqlite": {
+      "_path": "The path to sqlite database",
+      "path": "Users.db",
+      "_absolute": "Is absolute path?",
+      "absolute": false
+    },
+    "mysql": {
+      "_host_0": "The hostname to mysql.",
+      "_host_1": "It likes 127.0.0.1:3306",
+      "host": "localhost:3306",
+      "_username": "The username for mysql.",
+      "username": "root",
+      "_password": "The password for mysql.",
+      "password": "",
+      "_database": "The database should SodionAuth use.",
+      "database": "sodionauth"
+    },
+    "postgresql": {
+      "_host_0": "The hostname to postgresql.",
+      "_host_1": "It likes 127.0.0.1:5432",
+      "host": "localhost:5432",
+      "_username": "The username for postgresql.",
+      "username": "postgres",
+      "_password": "The password for postgresql.",
+      "password": "",
+      "_database": "The database should SodionAuth use.",
+      "database": "sodionauth"
+    }
+  },
+  "api": {
+    "xenforo": {
+      "xenforo": {
+        "url": "http://example.com/api",
+        "key": "YOUR_KEY_HERE",
+        "allow login": false,
+        "allow register": false,
+        "friendly name": "web api"
+      }
+    },
+    "web": {
+      "web": {
+        "url": "http://example.com/SodionAuth.php",
+        "key": "YOUR_KEY_HERE",
+        "allow login": false,
+        "allow register": false,
+        "friendly name": "web api"
+      }
+    }
+  },
+  "password": {
+    "minimum entropy": 32
+  },
+  "bungee": {
+    "_client key_0": "The key use when SodionAuth run as Bungee",
+    "_client key_1": "It should as same as Server's serverKey",
+    "client key": "682698309bf84f7aa8be117e82841cca",
+    "_server key_0": "The key use when SodionAuth run as Server",
+    "_server key_1": "It should as same as Bungee's clientKey",
+    "_server key_2": "If you have a Bungee outside the Bungee",
+    "_server key_3": "You should make this as same as outside Bungee's clientKet",
+    "server key": "719dde38a6a044bebec35fe00b52f47d"
+  },
+  "dependencies": {
+    "_maven repository_0": "Maven Repo Url",
+    "_maven repository_1": "If you are in China, you could try this",
+    "_maven repository_2": "https://maven.aliyun.com/repository/central",
+    "maven repository": "https://repo1.maven.org/maven2/"
+  },
+  "session": {
+    "_enable_0": "Auto login when player rejoin?",
+    "_enable_1": "If enable, make sure server can get player's true ip.",
+    "enable": true,
+    "_timeout": "Player can autoLogin in (seconds).",
+    "timeout": 1200
+  },
+  "_spawn_0": "Where should player login?",
+  "_spawn_1": "Player will be teleported to world spawn after login.",
+  "_spawn_2": "If set null, It will use world spawn.",
+  "spawn": {
+    "world": null,
+    "x": null,
+    "y": null,
+    "z": null,
+    "yaw": null,
+    "pitch": null
+  },
+  "teleport": {
+    "_tp spawn before login": "Should player login in spawn during login?",
+    "tp spawn before login": false,
+    "_tp back after login": "Should player tp to location where they quit?",
+    "tp back after login": false
+  },
+  "security": {
+    "_hide inventory_0": "Should hidden player's Inventory before login in?",
+    "_hide inventory_1": "It only works in bukkit. And ProtocolLib is need.",
+    "hide inventory": true,
+    "_spectator login": "Should keep player in spectator mode before login in?",
+    "spectator login": true,
+    "_default gamemode_0": "The default gamemode for player.",
+    "_default gamemode_1": "0 Survival, 1 Creative, 2 Adventure, 3 Spectator",
+    "default gamemode": 0,
+    "_show tips time": "The time show tip.",
+    "show tips time": 10,
+    "_max login time": "The time for login. If player use too much time, they will be kicked.",
+    "max login time": 60,
+    "_cancel chat after login_0": "Could forbid player send message?",
+    "_cancel chat after login_1": "It should enable when SodionAuth in auth server.",
+    "cancel chat after login": false
+  },
+  "protection": {
+    "ProxySystems": {
+      "_enable": "Enable anti-proxy system",
+      "enable": true,
+      "_update time": "The time update proxy list",
+      "update time": 60,
+      "_proxies provider": "Enable which proxy list provider",
+      "proxies provider": {
+        "LiuLiu": true,
+        "QiYun": true
+      },
+      "_enable local": "Enable local address join?",
+      "enable local": true
+    },
+    "GeoIp": {
+      "_enable": "Enable anti-proxy system",
+      "enable": true,
+      "_countries_0": "Could List country player join?",
+      "_countries_1": "Use ISO country id",
+      "_countries_2": "UNKNOWN means GeoIp can't know their countries.",
+      "countries": {
+        "CN": true,
+        "UNKNOWN": true
+      },
+      "_other": "Could player who not list in countries join?",
+      "other": true
+    },
+    "RateLimit": {
+      "_enable": "Enable rateLimit system",
+      "enable": true,
+      "_permits per second": "Permit produce per second.",
+      "permits per second": 10,
+      "_join": "Player join will take permit.",
+      "join": 1,
+      "_register": "Player register will take permit.",
+      "register": 10,
+      "_login": "Player login will take permit.",
+      "login": 5
+    }
+  }
+}

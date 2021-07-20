@@ -1,0 +1,28 @@
+# 日志
+logs
+plugins/plan/logs
+*.log
+# 自动生成的文件
+bStats
+PluginMetrics
+plugins/allmusic
+plugins/luckperms/libs
+plugins/luckperms/*storage
+plugins/luckperms/translations
+plugins/luckperms/contexts.json
+plugins/maintenance/language*.yml
+plugins/Geyser-Velocity/locales
+plugins/plan/theme.yml
+plugins/plan/ServerInfoFile.yml
+plugins/snap/plugins/SodionAuth/libraries
+plugins/snap/plugins/SodionAuth/lang
+plugins/snap/plugins/SodionAuth/probeResource
+plugins/snap/plugins/SodionAuth/Users.db
+plugins/LockLogin/plugin
+# 禁用的插件
+*.disabled
+# 不需要的配置
+plugins/snap/plugins/ColorMOTD
+# 包含密钥的自用文件
+*.used.*
+# 其他

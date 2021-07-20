@@ -1,2 +1,5 @@
-# server-waterfall
-skimit服务器使用的waterfall(bungeecord)服务端
+# skimit-server-velocity
+skimit服务器使用的Velocity代理端
+
+## 插件
+(TODO)
