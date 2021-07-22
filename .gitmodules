@@ -1,0 +1,3 @@
+[submodule "LockLogin-zh_CN-translation"]
+	path = plugins/LockLogin/lang
+	url = https://github.com/skimitmc/LockLogin-zh_CN-translation.git
