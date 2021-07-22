@@ -1,15 +1,15 @@
 # Config version. Do not change this
 config-version = "1.0"
 # What port should the proxy be bound to? By default, we'll bind to all addresses on port 25577.
-bind = "0.0.0.0:25577"
+bind = "0.0.0.0:1536"
 # What should be the MOTD? This gets displayed when the player adds your server to
 # their server list. Legacy color codes and JSON are accepted.
-motd = "&#09add3A Velocity Server"
+motd = "skimit"
 # What should we display for the maximum number of players? (Velocity does not support a cap
 # on the number of players online.)
-show-max-players = 500
+show-max-players = 32
 # Should we authenticate players with Mojang? By default, this is on.
-online-mode = true
+online-mode = false
 # If client's ISP/AS sent from this proxy is different from the one from Mojang's
 # authentication server, the player is kicked. This disallows some VPN and proxy
 # connections but is a weak form of protection.
@@ -25,15 +25,15 @@ prevent-client-proxy-connections = false
 #                  unable to implement network level firewalling (on a shared host).
 # - "modern":      Forward player IPs and UUIDs as part of the login process using
 #                  Velocity's native forwarding. Only applicable for Minecraft 1.13 or higher.
-player-info-forwarding-mode = "NONE"
+player-info-forwarding-mode = "none"
 # If you are using modern or BungeeGuard IP forwarding, configure a unique secret here.
-forwarding-secret = "h894xdfh65g41"
+forwarding-secret = ""
 # Announce whether or not your server supports Forge. If you run a modded server, we
 # suggest turning this on.
 # 
 # If your network runs one modpack consistently, consider using ping-passthrough = "mods"
 # instead for a nicer display in the server list.
-announce-forge = false
+announce-forge = true
 # If enabled (default is false) and the proxy is in online mode, Velocity will kick
 # any existing player who is online if a duplicate connection attempt is made.
 kick-existing-players = false
@@ -50,32 +50,32 @@ kick-existing-players = false
 #                  description and mod list.
 # - "all":         Uses the backend server's response as the proxy response. The Velocity
 #                  configuration is used if no servers could be contacted.
-ping-passthrough = "DISABLED"
+ping-passthrough = "mods"
 
 [servers]
 	# Configure your servers here. Each key represents the server's name, and the value
 	# represents the IP address of the server to connect to.
-	lobby = "127.0.0.1:30066"
-	minigames = "127.0.0.1:30068"
+	survival = "127.0.0.1:10894"
+	mirror = "139.198.171.116:54289"
+	test = "d4.akkocloud.com:10894"
 	# In what order we should try servers when a player logs in or is kicked from a server.
-	try = ["lobby"]
-	factions = "127.0.0.1:30067"
+	try = ["survival","mirror","test"]
 
 [forced-hosts]
-	"minigames.example.com" = ["minigames"]
+	# "s.skimit.cn:1536" = ["survival"]
 	# Configure your forced hosts here.
-	"lobby.example.com" = ["lobby"]
-	"factions.example.com" = ["factions"]
+	# "c.skimit.cn:1536" = ["mirror"]
+	# "test.skimit.cn:1536" = ["test"]
 
 [advanced]
 	# Specify a custom timeout for connection timeouts here. The default is five seconds.
-	connection-timeout = 5000
+	connection-timeout = 8000
 	# Enables BungeeCord plugin messaging channel support on Velocity.
 	bungee-plugin-message-channel = true
 	# Specify a read timeout for connections here. The default is 30 seconds.
 	read-timeout = 30000
 	# Enables TCP fast open support on the proxy. Requires the proxy to run on Linux.
-	tcp-fast-open = false
+	tcp-fast-open = true
 	# Shows ping requests to the proxy from clients.
 	show-ping-requests = false
 	# By default, Velocity will attempt to gracefully handle situations where the user unexpectedly
@@ -92,9 +92,9 @@ ping-passthrough = "DISABLED"
 	# don't enable it.
 	haproxy-protocol = false
 	# Enables the logging of commands
-	log-command-executions = false
+	log-command-executions = true
 	# How large a Minecraft packet has to be before we compress it. Setting this to zero will
-	# compress all packets, and setting it to -1 will disable compression entirely.
+	# compress all paackets, and setting it to -1 will disable compression entirely.
 	compression-threshold = 256
 	# How fast (in milliseconds) are clients allowed to connect after the last connection? By
 	# default, this is three seconds. Disable this by setting this to 0.
@@ -102,10 +102,25 @@ ping-passthrough = "DISABLED"
 
 [query]
 	# If query is enabled, on what port should the query protocol listen on?
-	port = 25577
+	port = 1536
+	# Whether plugins should be shown in query response by default or not
 	show-plugins = false
 	# This is the map name that is reported to the query services.
-	map = "Velocity"
+	map = "skimit"
 	# Whether to enable responding to GameSpy 4 query responses or not.
-	enabled = false
+	enabled = true
+
+# Legacy color codes and JSON are accepted in all messages.
+[messages]
+	generic-connection-error = "&c连接内部发生错误"
+	already-connected = "&c这个ID已连接到服务器！\n\n&7如果你刚刚断开连接，请稍后再加入服务器。"
+	online-mode-only = "&c我们只接受正版玩家。\n\n&7你更改了用户名吗？尝试重新登录Minecraft"
+	# Prefix when the player is disconnected from a server.
+	#   First argument '%s': the server name
+	disconnect-prefix = "&c无法连接%s: \n\n"
+	no-available-servers = "&c没有可用的服务器。"
+	# Prefix when the player gets kicked from a server.
+	#   First argument '%s': the server name
+	kick-prefix = "&c被踢出%s服务器: \n\n"
+	moved-to-new-server-prefix = "&c你所在的服务器将你踢出: \n\n"
 

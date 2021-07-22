@@ -17,7 +17,7 @@
 #                depending on their session status
 Options:
   MultiBungee: false
-  SendToServers: true
+  SendToServers: false
 
 #This must be the same for all
 #the proxy instances! You can write here
