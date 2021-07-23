@@ -123,4 +123,3 @@ ping-passthrough = "mods"
 	#   First argument '%s': the server name
 	kick-prefix = "&c被踢出%s服务器: \n\n"
 	moved-to-new-server-prefix = "&c你所在的服务器将你踢出: \n\n"
-
